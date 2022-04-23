@@ -43,10 +43,9 @@ function Home(props) {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const startNewRound = () => {
-    setAnswer(
-      Math.floor(Math.random() * (maximumNumber - minimumNumber + 1)) +
-        minimumNumber
-    );
+    let min = Math.ceil(minimumNumber);
+    let max = Math.floor(maximumNumber);
+    setAnswer(Math.floor(Math.random() * (max - min + 1)) + min);
     setRoundNumber(roundNumber + 1);
     setGuess("");
     setGuessNumber(1);
